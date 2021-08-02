@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+
+</head>
+<body>
+  
+<header class="header bg-dark">
+  <div class="contenedor contenido-header">
+    <div class="barra">
+
+      <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Collapsed content</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg ml-auto n1 col-12">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03">
+            <span class="navbar-toggler-icon"></span>
+            MENU
+          </button>
+          <a class="navbar-brand" href="#">CHOPING </a>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" (click)="collapseNav();" routerLink="/producto">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="collapseNav();" routerLink="/buscar">Buscar Producto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " (click)="collapseNav();" routerLink="/otro">Otra Opcion</a>
+              </li>
+              <li class="nav-link" *ngIf="!isLogged; else noLoggeado">
+                <a class="nav-link text-muted" (click)="collapseNav();" routerLink="/login" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Iniciar Sesión                
+                </a>      
+              </li>
+              <ng-template #noLoggeado>
+                <li class="nav-link text-muted">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <button class="dropdown-item" type="button" >Mi informacion</button> 
+                      <button class="dropdown-item" type="button" (click)="collapseNav();" style="border: none; background: none; font-size: 10px; letter-spacing: 1px;"  (click)="cerrarSesion()" aria-haspopup="true" aria-expanded="false">
+                        Cerrar sesion<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i></button>
+                    </div>
+                  </div>
+                  </li>
+            </ng-template>
+            </ul>
+           <!-- <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-outline-success my-2 my-sm-0"  routerLink="/registro" type="submit">Registrarse</button>
+            </form>-->
+          </div>
+        </nav>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+</body>
+</html>
