@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="card mb-3">
+        <!-- Body  -->
+        Perfil
+        <div class="card-body bg-secondary">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Nombre Usuario</th>
+                        <th class="text-center">Correo Electronico</th>
+                        <th class="text-center">Telefono</th>
+                        <th class="text-center">Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">{{usuarioDo.nombre}}</td>
+                        <td class="text-center">{{usuarioDo.email}}</td>
+                        <td class="text-center">{{usuarioDo.telefono}}</td>
+                        <td class="text-center">{{usuarioDo.tipo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="card mb-3">
+        <!-- Body  -->
+        {{title}}
+        <button type="button" *ngIf="boton" routerLink="/crearProducto" class="btn btn-success d-none d-md-block button">Crear</button>
+        <div class="card-body bg-secondary">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Foto Del Producto</th>
+                        <th class="text-center">Descripcion</th>
+                        <th class="text-center">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productos">
+                        <td class="text-center">
+                            <img src="{{producto.foto}}" width="50" height="50">
+                        </td>
+                        <td class="text-center">{{producto.descripcion}}</td>
+                        <td class="text-center">{{producto.precio}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+  
+  

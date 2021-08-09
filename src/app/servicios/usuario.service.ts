@@ -10,14 +10,18 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   getUsuarioNombre(nombre: String){
-    return this.http.get(this.API_URI+'/usuario/pornombre/'+nombre)
+    return this.http.get(this.API_URI+'/usuarios/porNombre/'+nombre)
+}
+getUsuarioEmail(email: String){
+  console.log("Hooooooolaaaaaa");
+  return this.http.get(this.API_URI+'/usuarios/porEmail/'+email)
 }
 getUsuarios() {
   return this.http.get(this.API_URI+'/usuarios')
 }
 
 getUsuario(id: number) {
-  return this.http.get(this.API_URI+'/usuarios/'+id+'/usuarios')
+  return this.http.get(this.API_URI+'/usuarios/'+id)
 }
 
 createUsuario(usuario: Usuario) {

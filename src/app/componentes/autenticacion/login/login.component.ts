@@ -46,9 +46,6 @@ export class LoginComponent implements OnInit {
           icon: 'success',
           confirmButtonText: 'Ok'
         });
-        if(this.usuario.tipo.nombre=='ADMINISTRADOR'){
-            this.router.navigate(['']);
-        }
       },
       err => {
         swal.fire({
@@ -74,10 +71,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
+    console.log(this.loginForm.value);
 
-    if(this.loginForm.controls.password.errors.required || this.loginForm.controls.password.errors.required){
-      return;
-    }
+
     // Manejar el caso de que la forma sea invalida. En este caso que los campos esten vacios
     if(this.loginForm.invalid){
       let campos_invalidos = this.camposInvalidos()
@@ -119,9 +115,16 @@ export class LoginComponent implements OnInit {
     }else{
       this.loginService.autenticar(this.loginForm.value).pipe(first())
       .subscribe(res => {
+        swal.fire({
+          title: 'Bienvenido.',
+          text: "Sesión Iniciada",
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        });
         this.loginService.loggedIn(this.loginForm.controls['email'].value, res);
         console.log(this.loginForm.controls['email'].value);
         this.submitted = false;
+        this.router.navigate(['']);
         },
         err => {
         swal.fire({

@@ -1,1 +1,57 @@
-<p>registro works!</p>
+<section id="register" >
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+          <div class="car_register">
+            <div class="card bg-dark text-primary">
+              <div class="card-body text-center">
+                <form  [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+                  <h1 class="h3 mb-3 font-weight-normal text-primary">Register</h1>
+                  <div class="form-group">
+                    <input type="nombre" name="nombre" placeholder="Nombre" formControlName="nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+                    <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                    <div *ngIf="f.nombre.errors.required">El email es obligatorio</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input name="password" type="password" placeholder="Contraseña" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">El password es obligatorio</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input name="usuario" type="email" placeholder="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">El email es obligatorio</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input name="usuario" type="text" placeholder="telefono" formControlName="telefono" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }">
+                    <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                    <div *ngIf="f.telefono.errors.required">El email es obligatorio</div>
+                    </div>
+                </div>
+                  <div class="form-group">
+                    <label for="tipo">Tipo de usuario<span class="text-danger">*</span></label>
+                    <select class="form-control" [(ngModel)]="tipoUsuarioSelec" name="tipoUsuarioSelec" id="tipoUsuarioSelec" [ngModelOptions]="{standalone: true}">
+                    <option [value] = "null" hidden> Selecciona un rol</option>
+                    <option *ngFor="let tipoUsuario of tipos" [value]="tipoUsuario.id">
+                        {{tipoUsuario.nombre}}
+                    </option>
+                    </select>
+                  </div>
+    
+                  <button type="submit" class="btn btn-lg  btn-primary btn-block">Register</button>
+                  <div class="form-group bg-dark">
+                    <a routerLink="/login" class="form-control login-user bg-dark text-primary">Tienes una cuenta ? </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    </section>

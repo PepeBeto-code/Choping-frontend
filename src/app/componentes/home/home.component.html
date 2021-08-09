@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="avatar">
+    <div  *ngIf="!isLogged; else noLoggeado">
+        <button type="button" routerLink="/registro" class="btn btn-outline-primary btn-circle btn-xl">REGISTRO
+        </button>
+    </div>
+    <ng-template #noLoggeado>
+        <div>
+            <div><h4>Bienvenido &nbsp;&nbsp;<i class="fas fa-user"></i></h4></div>
+            <div><h5>{{usuario.nombre}}</h5></div>
+        </div>
+    </ng-template>
+</div>

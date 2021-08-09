@@ -9,6 +9,9 @@ import { FooterComponent } from './componentes/layout/footer/footer.component';
 import { LoginComponent } from './componentes/autenticacion/login/login.component';
 import { RegistroComponent } from './componentes/autenticacion/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductosComponent } from './componentes/productos/productos.component';
+import { InfoComponent } from './componentes/info/info.component';
+import { CrearProductoComponent } from './componentes/crear-producto/crear-producto.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     FooterComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    ProductosComponent,
+    InfoComponent,
+    CrearProductoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+.avatar{
+    width: 1350px;height: 450px;
+    margin: 10px auto 30px;
+    border: 4px solid #aaa;
+    background-size: cover;
+    background-image: url("../../../assets/foto.jpg");
+  }
+
+  button{ display: flex; align-items: center; justify-content: center; text-align: center;
+	Margin: 0 auto ; Width: 100px ; }
+
+  .btn-circle.btn-xl {
+    width: 150px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    border: 4px solid #aaa;
+    Margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
