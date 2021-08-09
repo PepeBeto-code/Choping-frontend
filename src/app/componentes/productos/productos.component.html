@@ -1,0 +1,15 @@
+<div class="d-flex flex-column container bg-secondary" *ngFor="let tipo of productos">
+   <div class="p-5 container">
+       <div class="row">
+        <div class="col"><img src="{{tipo.foto}}" width="150" height="100"></div>
+        <div class="col text-center"><h1><i class="fas fa-dollar-sign"></i>{{tipo.precio}}</h1></div>
+        <div class="col"></div>
+        <div class="col" *ngIf="isLogged && boton"><button type="button" class="btn btn-outline-primary">COMPRAR</button></div>
+        <div class="w-100"></div>
+        <div class="col">{{tipo.descripcion}}</div>
+     </div>    
+   </div>
+  </div>
+
+
+  
